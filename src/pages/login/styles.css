@@ -1,0 +1,24 @@
+.login-section {
+    background-color: #B8FFDC;
+    overflow: hidden;
+    display: flex;
+}
+
+.card {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: calc(100% - 40px);
+    width: 100%;
+    margin: 20px 10%;
+    border-radius: 16px;
+}
+
+.login {
+}
+
+.image {
+    height: 50%;
+    width: 50%;
+}
