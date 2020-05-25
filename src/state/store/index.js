@@ -10,6 +10,7 @@ const initialState = {
     },
     token: '',
     expireAt: '',
+    operator: {}
   };
   
   const useGlobal = globalHook(React, initialState, actions);
