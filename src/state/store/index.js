@@ -8,6 +8,15 @@ const initialState = {
         password: '',
         status: 'INITIAL'
     },
+    dashboard: {
+        tabs: [],
+        currentTab: '',
+        pageNo: 0,
+        pageSize: 5,
+        sortBy: '',
+        filter: '',
+        data: [],
+    },
     token: '',
     expireAt: '',
     operator: {}

@@ -26,18 +26,10 @@ const Login = ({ history }) => {
     const usernameInput = createInputModel(globalState.login.username, handleInput('username'), 'Usuário', 'text');
     const passwordInput = createInputModel(globalState.login.password, handleInput('password'), 'Senha', 'password');
 
-    const handleLogin = () => {
-        if(globalState.login.status === 'SUCCESS') {
-            history.push('/home');
-        }
-    }
-
     const onSubmit = (event) => {
         event.preventDefault();
         globalActions.login.login();
     }
-
-    
 
     useEffect(() => {
         if(globalState.login.status === 'SUCCESS'){
@@ -48,7 +40,7 @@ const Login = ({ history }) => {
 
     return(
         <section className="login-section">
-            <div className="card">
+            <div className="card-login">
                 <div className="login">
                     <h1>
                         Login

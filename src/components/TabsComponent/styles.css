@@ -1,0 +1,11 @@
+.tab-item {
+    padding: 12px 24px;
+    background-color: white;
+    font-weight: 700;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.tabs {
+    display: flex;
+    height: 46px;
+}

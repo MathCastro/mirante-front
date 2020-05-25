@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.card {
+.card-login {
     background-color: white;
     display: flex;
     align-items: center;
@@ -24,7 +24,7 @@
 }
 
 @media only screen and (max-width: 929px) {
-    .card {
+    .card-login {
         height: 100%;
         margin: 20px 0;
     }
