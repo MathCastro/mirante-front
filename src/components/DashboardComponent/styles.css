@@ -22,12 +22,11 @@
     color: #70B594
 }
 
-.table-row {
-    border-radius: 8px;
-}
-
 .table-row:hover {
     cursor: pointer;
-    
     background-color: #fafafa;
+}
+
+.buttons-wrapper {
+    display: flex;
 }

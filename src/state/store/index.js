@@ -17,6 +17,8 @@ const initialState = {
         filter: '',
         data: {},
         status: 'INITIAL',
+        modalError: false,
+        errorMessage: ''
     },
     token: '',
     expireAt: '',

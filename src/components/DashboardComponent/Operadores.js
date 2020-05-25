@@ -79,7 +79,7 @@ const Operadores = () => {
       <div>
         <form className="search-filter" onSubmit={onSubmit}>
           <InputComponent state={filterInput} />
-          <div>
+          <div className='buttons-wrapper'>
             <ButtonComponent
               preventDefault
               type="submit"

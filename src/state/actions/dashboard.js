@@ -65,7 +65,7 @@ export const filter = async (store, request = getInstance(store)) => {
 export const deleteItem = async (store, id, request = getInstance(store)) => {
   const state = { ...store.state.dashboard };
   state.status = "LOADING";
-  store.setState({ login: state });
+  store.setState({ dashboard: state });
   try {
     const response = await request.delete(`${state.currentTab.url}/${id}`);
 
@@ -73,7 +73,15 @@ export const deleteItem = async (store, id, request = getInstance(store)) => {
     store.setState({ dashboard: state });
   } catch (error) {
     state.status = "ERROR";
+    state.modalError = true;
+    state.errorMessage = 'Não foi possível deletar Operador. Verifique se ele não possui dependências.'
     store.setState({ dashboard: state });
     console.error(error);
   }
 };
+
+export const closeModal = (store) => {
+  const state = { ...store.state.dashboard };
+  state.modalError = false;
+  store.setState({ dashboard: state });
+}

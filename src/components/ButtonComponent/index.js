@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import ReactLoading from 'react-loading';
 
 
-const ButtonComponent = ({ text, isLoading }) => {
+const ButtonComponent = ({ text, isLoading, onClick }) => {
     const content = isLoading ? <ReactLoading type={'spin'} color={'#dddddd'} height={25} width={25} /> : text;
 
     return (
-        <button className="button">{content}</button>
+        <button className="button" onClick={onClick}>{content}</button>
     );
 }
 
