@@ -40,7 +40,7 @@ const Login = ({ history }) => {
 
     return(
         <section className="login-section">
-            <div className="card-login">
+            <div className="card">
                 <div className="login">
                     <h1>
                         Login

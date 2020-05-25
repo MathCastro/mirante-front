@@ -2,7 +2,6 @@
     background-color: #B8FFDC;
     overflow: hidden;
     display: flex;
-    padding: 20px;
 }
 
 .card-dashboard {
@@ -14,4 +13,16 @@
     width: 100%;
     margin: 20px 10%;
     border-radius: 16px;
+}
+
+.dashboard-content {
+    width: 100%;
+    padding: 20px 10%;
+}
+
+@media only screen and (max-width: 929px) {
+    .dashboard-content {
+        height: 100%;
+        padding: 20px 0;
+    }
 }
