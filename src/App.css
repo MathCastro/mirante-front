@@ -1,5 +1,5 @@
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 html,
@@ -32,4 +32,13 @@ table {
 td {
   text-align: center;
   padding: 1px 0px;
+}
+
+select {
+  height: 30px;
+  border-radius: 16px;
+  border: 1px solid #dddddd;
+  padding: 0px 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
 }

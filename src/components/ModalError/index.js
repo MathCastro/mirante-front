@@ -14,6 +14,8 @@ const customStyles = {
   },
 };
 
+Modal.setAppElement('body');
+
 const ModalError = () => {
   const [globalState, globalActions] = useGlobal();
 

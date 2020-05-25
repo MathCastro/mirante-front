@@ -4,6 +4,7 @@ import useGlobal from "../../state/store";
 import InputComponent from "../InputComponent";
 import ButtonComponent from "../ButtonComponent";
 import deleteButton from "../../assets/delete.svg";
+import ModalOperator from "../ModalOperator";
 
 const Operadores = () => {
   const [globalState, globalActions] = useGlobal();
@@ -34,9 +35,13 @@ const Operadores = () => {
     globalActions.dashboard.filter();
   };
 
+  const openModalOperator = (id) => {
+    globalActions.dashboard.openModalOperator(id);
+  }
+
   const createTable = () => {
     let table = [];
-    if (globalState.dashboard.status === "SUCCESS") {
+    if (globalState.dashboard.data.content !== null && globalState.dashboard.status === "SUCCESS") {
       for (let i = 0; i < globalState.dashboard.data.content.length; i++) {
         let children = [];
         children.push(<td>{globalState.dashboard.data.content[i].name}</td>);
@@ -61,7 +66,7 @@ const Operadores = () => {
           </td>
         );
         table.push(
-          <tbody className="table-row">
+          <tbody className="table-row" onClick={() => {openModalOperator(globalState.dashboard.data.content[i].id)}}>
             <tr>{children}</tr>
           </tbody>
         );
@@ -75,6 +80,8 @@ const Operadores = () => {
   }, []);
 
   return (
+    <>
+    <ModalOperator />
     <div className="table">
       <div>
         <form className="search-filter" onSubmit={onSubmit}>
@@ -87,10 +94,9 @@ const Operadores = () => {
               isLoading={globalState.dashboard.status === "LOADING"}
             />
             <ButtonComponent
-              preventDefault
-              type="submit"
               text={"Criar"}
               isLoading={globalState.dashboard.status === "LOADING"}
+              onClick={() => {openModalOperator(null)}}
             />
           </div>
         </form>
@@ -107,6 +113,7 @@ const Operadores = () => {
         {createTable()}
       </table>
     </div>
+    </>
   );
 };
 

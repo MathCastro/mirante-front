@@ -15,10 +15,25 @@ const initialState = {
         pageSize: 5,
         sortBy: 'id',
         filter: '',
-        data: {},
+        data: {
+            content: [],
+        },
         status: 'INITIAL',
         modalError: false,
-        errorMessage: ''
+        errorMessage: '',
+        modalOperator: false,
+        idOperator: null,
+    },
+    operatorInfo: {
+        id: null,
+        name: '',
+        user: {
+            username: '',
+            password: '',
+            roles: {
+                id: 2,
+            },
+        },
     },
     token: '',
     expireAt: '',
