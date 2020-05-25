@@ -10,5 +10,24 @@
 .search-filter {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.table {
+    padding: 0px 20px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    color: #70B594
+}
+
+.table-row {
+    border-radius: 8px;
+}
+
+.table-row:hover {
+    cursor: pointer;
+    
+    background-color: #fafafa;
 }

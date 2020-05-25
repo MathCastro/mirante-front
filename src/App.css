@@ -24,3 +24,12 @@ input {
   display: block;
   margin: 16px 0px;
 }
+
+table {
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  padding: 1px 0px;
+}

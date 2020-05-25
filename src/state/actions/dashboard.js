@@ -46,22 +46,34 @@ export const filter = async (store, request = getInstance(store)) => {
     'sortBy': state.sortBy,
     'value': state.filter
   };
-  // const formData = new FormData();
-  // formData.append("pageNo", state.pageNo);
-  // formData.append("pageSize", state.pageSize);
-  // formData.append("sortBy", state.sortBy);
-  // formData.append("value", state.filter);
   try {
     const response = await request.get(
-      BASE_URL + state.currentTab.url,
+      state.currentTab.url,
       { params }
     );
 
     state.data = response.data
     state.status = "SUCCESS";
-    debugger;
     store.setState({ dashboard: state });
   } catch (error) {
+    state.status = "ERROR";
+    store.setState({ dashboard: state });
+    console.error(error);
+  }
+};
+
+export const deleteItem = async (store, id, request = getInstance(store)) => {
+  const state = { ...store.state.dashboard };
+  state.status = "LOADING";
+  store.setState({ login: state });
+  try {
+    const response = await request.delete(`${state.currentTab.url}/${id}`);
+
+    state.status = "SUCCESS";
+    store.setState({ dashboard: state });
+  } catch (error) {
+    state.status = "ERROR";
+    store.setState({ dashboard: state });
     console.error(error);
   }
 };
